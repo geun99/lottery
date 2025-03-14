@@ -20,7 +20,8 @@ const App = () => {
   const handleDraw = () => {
     const participants = inputValue
       .split("\n")
-      .filter((name) => name.trim() !== "");
+      .filter((name) => name.trim() !== "")
+      .filter((v, i) => i % 2 == 0);
     const shuffled = participants.sort(() => Math.random() - 0.5);
     setWinners(shuffled.slice(0, numWinners));
   };
